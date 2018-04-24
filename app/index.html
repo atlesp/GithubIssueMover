@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<header>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" type="image/png" href="logo.png" />
+    <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+     <script type="text/javascript" src="js/github.js"></script>
+    <link rel="stylesheet" href="css/bootstrap3.3.7.min.css">
+    <script type="text/javascript" src="js/bootstrap3.3.7.min.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+    <style type="text/css">
+        
+        html {
+            min-width:800px;
+            min-height: 600px;
+        }
+        
+        .force-to-bottom {
+            position: absolute;
+            border-color: red;
+            bottom:0;
+            right:0;
+        }
+
+
+        .extra-space {
+            padding-top: 20px;
+            padding-bottom: 20px;
+        }
+
+      </style>
+  
+</header>
+<body>
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class='pull-right'>
+                    <button id="showUserDialog" type="button" class="btn btn-link">
+                        <span class="glyphicon glyphicon-lock"></span>
+                    </button>
+            </div>
+            <div class="navbar-header">
+                <h1>Github issue mover <small>- Copies the issue to another repo and closes the source issue</small></h1>    
+            </div>   
+        </div>
+    </nav>
+    <div class="container" >
+     
+        <div id="alertMessage" class="alert alert-danger" role="alert">
+        </div>
+
+        <div id="userInfoDialog" title="Update github user name and token">
+                <label for="txtUsername">User name:</label>
+                <input type="text" class="form-control" id="txtUsername" value="">
+                <label for="txtPassword">Token:</label>
+                <input type="password" class="form-control" id="txtPassword" value="">
+                <!-- <label class="checkbox"><input type="checkbox" value="storeUser">Store user credentials</label> -->
+                <button id="updateUser" class="btn btn-lg btn-primary">Update</button>
+        </div>
+        
+        <div id="workspace" class="row">
+
+            <div class="row" style="position: relative;">
+                <div class="col-xs-4 col-md-4">
+                    <label for="selGithubOrganisations">Source owner:</label>
+                    <select class="form-control" id="selGithubOrganisations">
+                    </select>
+                </div>
+                <div class="col-xs-4 col-md-4">
+                    <label for="selGithubRepositories">Source repository:</label>
+                    <select class="form-control" id="selGithubRepositories">
+                    </select>
+                </div>
+                <div class="col-xs-2 col-md-3">
+                    <label for="txtIssueId">Issue id:</label>
+                    <input type="text" class="form-control" id="txtIssueId" value="">
+                </div>
+                <div class="col-xs-2 col-md-1 force-to-bottom">
+                <button id="getIssue" class="btn btn-primary ">Fetch issue</button>
+                </div>
+            </div>
+            <div></div>
+            <div id="gitDestination" class="row">
+                <div class="col-xs-4 col-md-4">    
+                    <label for="selToGithubOrganisations">To owner:</label>
+                    <select class="form-control" id="selToGithubOrganisations">
+                    </select>
+                </div>
+                <div class="col-xs-4 col-md-4">
+                    <label for="selToGithubRepositories">To repository</label>
+                    <select class="form-control" id="selToGithubRepositories">
+                    </select>
+                </div>
+                <div class="col-xs-4 col-md-4">
+                    <label for="selToGithubMilestones">Milestone</label>
+                    <select class="form-control" id="selToGithubMilestones">
+                    </select>
+                </div>
+
+                
+            </div>
+            <div id="moveDiv" class="row text-center extra-space" >
+                <button id="moveIssue" class="btn btn-lg btn-primary">Move issue</button>
+            </div>
+
+            <div class="row">
+                <div id="githubIssue" class="panel panel-info row">
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+
+
+</html>

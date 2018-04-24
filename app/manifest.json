@@ -1,0 +1,26 @@
+{
+    "name": "Github Issue Mover",
+    "description" : "Help you move a Github issue to another repository",
+    "manifest_version": 2,
+    
+    "author": "Atle Esperum",
+    "browser_action": {
+        "default_popup": "index.html",
+        "default_icon": "logo.png"
+      },
+    "commands": {
+        "_execute_browser_action": {
+          "suggested_key": {
+            "default": "Ctrl+Shift+F",
+            "mac": "MacCtrl+Shift+F"
+          },
+          "description": "Help you move a Github issue to another repository"
+        }
+    },
+  
+    "permissions":[
+        "https://api.github.com/",
+        "storage",
+        "tabs"
+      ]
+}
